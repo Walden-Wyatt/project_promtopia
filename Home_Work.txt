@@ -1,0 +1,26 @@
+
+
+
+ Features to Implement by our own 
+
+ The code for [ 1 and 2 ] should be implemented within the Feed component
+
+ 1. Implement Search 
+    Here we have to perform search engine operations
+   a. Search by prompt
+   b. Search by tag
+   c. Search by username
+ 2. Implement Click on tag
+     when you click on tag name, that name should be displayed in the Search box
+ 
+ 
+ 
+   The code for [ 3 ] should be implemented within the [ profile/[id]/page.jsx ].
+ 
+ 3. Implement View other profiles
+    when you click on to the Profiles of the user it has to re-direct to the Profile page of that specific Users.
+
+
+
+
+

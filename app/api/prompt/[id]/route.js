@@ -17,7 +17,7 @@
     try{
         await connectToDB();
 
-        const prompts = await Prompt.findById( params.id ).populate('creator');
+        const prompt = await Prompt.findById( params.id ).populate('creator');
 
         if( !prompt ) return new Response("Prompt not found" , { status: 404 } )
 
@@ -43,16 +43,16 @@
     try {
         await connectToDB();
 
-        const exisitingPrompt = await Prompt.findById( params.id );
+        const existingPrompt = await Prompt.findById( params.id );
 
-        if( !exisitingPrompt ) return new Response("Prompt not found", { status: 404 })
+        if( !existingPrompt ) return new Response("Prompt not found", { status: 404 })
 
-        exisitingPrompt.prompt = prompt;
-        exisitingPrompt.tag = tag;
+        existingPrompt.prompt = prompt;
+        existingPrompt.tag = tag;
 
-        await exisitingPrompt.save();
+        await existingPrompt.save();
 
-        return new Response( JSON.stringify(exisitingPrompt), { status: 200 } )
+        return new Response( JSON.stringify(existingPrompt), { status: 200 } )
     }
     catch( error ) {
         return new Response("Failed to update prompt", { status: 500 })

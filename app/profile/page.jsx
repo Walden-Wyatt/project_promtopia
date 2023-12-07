@@ -21,7 +21,7 @@ const MyProfile = () => {
 
   const router = useRouter();
 
-    const { data: session } = useSession();
+    // const { data: session } = useSession();
 
     const [ posts, setPosts ] = useState([]);
 
@@ -49,6 +49,7 @@ const MyProfile = () => {
 
       if( hasConfirmed ) {
         try {
+          // here we have are getting the data from mongodb and deleting the prompt which has been requested for.
           await fetch( `/api/prompt/${post._id.toString()}`, {
             method: 'DELETE'
           } );
@@ -58,7 +59,8 @@ const MyProfile = () => {
           setPosts( filteredPosts );
 
         } catch( error ) {
-          console.log( error );
+          // console.log( error );
+          console.log( "Post Not Deleted")
         }
       }
     }

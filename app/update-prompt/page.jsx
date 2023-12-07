@@ -3,10 +3,10 @@
 'use client';
 
 // To manage the state.
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // this allows us to know which user is currently logged in
-import { useEffect, /* useSession */ } from "next-auth/react";
+// import {  /* useSession */ } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Form from "@components/Form";
 import { sendError } from "next/dist/server/api-utils";
@@ -20,7 +20,7 @@ const EditPrompt = () => {
 
     // Here we have invoked [ useRouter ]
     const router = useRouter();
-    const { data: session } = useSession();
+    // const { data: session } = useSession();
 
     const searchParams = useSearchParams();
     const promptId = searchParams.get('id');
@@ -37,8 +37,8 @@ const EditPrompt = () => {
     useEffect( () => {
 
         const getPromptDetails = async () => {
-            const response = await fetch(`/api/prompts/${promptId}`)
-
+            // const response = await fetch(`/api/prompts/${promptId}`)
+            const response = await fetch(`/api/prompt/${promptId}`)
             const data = await response.json();
 
             setPost( {
@@ -88,7 +88,7 @@ const EditPrompt = () => {
             console.log( error );
         }
         finally {
-
+            setSubmitting(false)
         }
     }
 

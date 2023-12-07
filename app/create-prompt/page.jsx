@@ -61,7 +61,7 @@ const CreatePrompt = () => {
             console.log( error );
         }
         finally {
-
+            setSubmitting(false)
         }
     }
 
