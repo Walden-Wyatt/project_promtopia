@@ -21,7 +21,7 @@ const MyProfile = () => {
 
   const router = useRouter();
 
-    // const { data: session } = useSession();
+    const { data: session } = useSession();
 
     const [ posts, setPosts ] = useState([]);
 
