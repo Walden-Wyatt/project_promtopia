@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "paths": {
+
+
+      // 5 step
+
+      /*
+
+       Error :-
+
+       ./app/layout.jsx:5:1
+Module not found: Can't resolve '@styles/globals.css'
+  3 |  // here we have css files import statement which will be applicable to this component
+  4 |  // here we did not specified relative or absolute path, we just used [ @ ] to specify the path.
+> 5 |  import '@styles/globals.css' 
+    | ^
+  6 |  
+  7 |
+  8 |
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+-------
+
+   The above error occurs if we fail to remove [ / ] from [ @/ ] in the below code 
+
+      */
+      // "@/*": ["./*"]
+      "@*": ["./*"]
+
+    }
+  }
+}
